@@ -3,250 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Standard Chartered</title>
+    <title>Standard Chartered Bank</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Nav Bar (top)-->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="padding: 8px 0;">
-        <div class="container-fluid">
-            <div class="ms-auto">
-                <ul class="navbar-nav d-flex flex-row">
-                    <li class="nav-item">
-                        <a class="nav-link text-white px-3" href="#" style="font-size: 14px; border-right: 1px solid #555;">Online banking</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white px-3" href="banking-form.html" style="font-size: 14px; border-right: 1px solid #555;">Private banking</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white px-3" href="#" style="font-size: 14px; border-right: 1px solid #555;">Straight2Bank</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white px-3" href="#" style="font-size: 14px; border-right: 1px solid #555;">Contact us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white px-3" href="#" style="font-size: 14px;">Locations</a>
-                    </li>
-                </ul>
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-dark top-nav py-1">
+        <div class="container-fluid justify-content-end">
+            <div class="nav-links d-flex align-items-center">
+                <a href="#" class="nav-link text-white me-3 hover-link">
+                    <i class="fas fa-laptop me-1"></i>Online Banking
+                </a>
+                <a href="banking-form.html" class="nav-link text-white me-3 hover-link">
+                    <i class="fas fa-university me-1"></i>Private Banking
+                </a>
+                <a href="#" class="nav-link text-white hover-link">
+                    <i class="fas fa-phone me-1"></i>Contact Us
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Sticky nvabr -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top">
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#" data-aos="fade-right">
-                <div class="d-flex align-items-center">
-                    <div class="me-2" style="width: 40px; height: 40px; border-radius: 8px; position: relative; display: flex; align-items: center; justify-content: center;">
-                        <img src="sc.jpeg" 
-                             alt="Standard Chartered Logo" 
-                             style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;">
-                    </div>
-                    <div>
-                        <div style="font-weight: 700; color: #2c3e50; font-size: 18px;">standard</div>
-                        <div style="font-weight: 400; color: #2c3e50; font-size: 18px; margin-top: -5px;">chartered</div>
-                    </div>
-                </div>
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="sc.jpeg" alt="SC Logo" class="me-2" style="height: 40px; width: auto;">
+
+                <div>
+                    <div class="brand-name">standard</div>
+                    <div class="brand-sub">chartered</div>
                 </div>
             </a>
             
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
-                <!--  mobilefriendly -->
-                <div class="d-lg-none">
-                    <hr class="my-3">
-                    <h6 class="text-muted px-3 mb-2">Quick Access</h6>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-primary px-3 py-2" href="#" style="background-color: #f8f9fa; border-radius: 8px; margin: 2px 12px;">
-                                <i class="fas fa-laptop me-2"></i>Online banking
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-primary px-3 py-2" href="banking-form.html" style="background-color: #f8f9fa; border-radius: 8px; margin: 2px 12px;">
-                                <span style="font-size: 1.1rem; margin-right: 8px;">💼</span>Private banking
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-primary px-3 py-2" href="#" style="background-color: #f8f9fa; border-radius: 8px; margin: 2px 12px;">
-                                <i class="fas fa-building me-2"></i>Straight2Bank
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-primary px-3 py-2" href="#" style="background-color: #f8f9fa; border-radius: 8px; margin: 2px 12px;">
-                                <i class="fas fa-phone me-2"></i>Contact us
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-primary px-3 py-2" href="#" style="background-color: #f8f9fa; border-radius: 8px; margin: 2px 12px;">
-                                <i class="fas fa-map-marker-alt me-2"></i>Locations
-                            </a>
-                        </li>
-                    </ul>
-                    <hr class="my-3">
-                </div>
-
-                <!-- links for mainnav -->
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-secondary px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About us</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-info-circle me-2"></i>Our Story</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-users me-2"></i>Leadership</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-history me-2"></i>Our Heritage</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-secondary px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our businesses</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Retail Banking</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-briefcase me-2"></i>Corporate Banking</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line me-2"></i>Wealth Management</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="banking-form.html">
+                        <i class="fas me-1"></i>Customer Management
+                    </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Investors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
                     <li class="nav-item">
-                        <a class="nav-link text-secondary px-3" href="#">Investors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-secondary px-3" href="#">Insights</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-secondary px-3" href="#">Media</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-secondary px-3" href="#">Careers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-primary px-3" href="#" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <a class="nav-link text-primary" href="#" data-bs-toggle="modal" data-bs-target="#searchModal">
                             <i class="fas fa-search"></i>
                         </a>
                     </li>
                 </ul>
+            </div>
+        </div>
+    </nav>
 
-                <!-- contentforphone -->
-                <div class="d-lg-none mt-3 px-3">
-                    <div class="card border-0" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
-                        <div class="card-body text-center py-4">
-                            <h6 class="fw-bold mb-3">Need Help?</h6>
-                            <div class="d-grid gap-2">
-                                <a href="tel:+1234567890" class="btn btn-outline-primary btn-sm">
-                                    <i class="fas fa-phone me-2"></i>Call Us
-                                </a>
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    <i class="fas fa-comments me-2"></i>Live Chat
-                                </a>
-                            </div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section d-flex align-items-center">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="hero-title text-white mb-3">Welcome to Standard Chartered</h1>
+                    <p class="hero-subtitle text-white mb-4">Discover innovative banking solutions for your financial journey.</p>
+                    <button class="btn btn-primary btn-lg hover-btn">
+                        Explore Services <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="floating-element">
+            <div class="floating-circle">
+                <i class="fas fa-university"></i>
+                <div class="circle-text">160+ Years</div>
+            </div>
+        </div>
+        
+        <div class="hero-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- Banking Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
+                         alt="Banking" class="img-fluid rounded-3 shadow banking-img">
+                </div>
+                <div class="col-lg-8">
+                    <h2 class="section-title mb-3">Wealth & Retail Banking</h2>
+                    <p class="text-muted mb-4">Comprehensive banking solutions serving clients across the wealth continuum with international expertise.</p>
+                    <div class="features">
+                        <div class="feature-item mb-2">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Global wealth management solutions
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            International banking expertise
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Search -->
-    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content border-0 shadow-2xl" style="border-radius: 20px; background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
-                <div class="modal-header border-0 pb-0" style="background: transparent;">
-                    <div class="d-flex align-items-center">
-                        <div class="me-3" style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-search text-primary" style="font-size: 18px;"></i>
-                        </div>
-                        <div>
-                            <h5 class="modal-title fw-bold mb-1" id="searchModalLabel" style="color: #2c3e50; font-size: 1.5rem;">Search Retail Banking</h5>
-                            <p class="text-muted mb-0" style="font-size: 0.9rem;">Find what you're looking for quickly</p>
-                        </div>
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background: none; border: none; font-size: 1.5rem; color: #6c757d; transition: all 0.3s ease;">
-                        <i class="fas fa-times"></i>
-                    </button>
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content search-modal">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Search Services</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body pt-4">
-                    <div class="search-form">
-                        <div class="input-group input-group-lg mb-4" style="border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                            <span class="input-group-text border-0" style="background: linear-gradient(135deg, #007bff, #0056b3); color: white;">
-                                <i class="fas fa-search"></i>
-                            </span>
-                            <input type="text" class="form-control border-0 py-3" placeholder="Search for banking services, products, or information..." 
-                                   style="background-color: #f8f9fa; font-size: 1.1rem; transition: all 0.3s ease;" id="searchInput">
-                            <button class="btn btn-primary px-4 py-3" type="button" style="background: linear-gradient(135deg, #007bff, #0056b3); border: none; font-weight: 600; transition: all 0.3s ease;">
-                                Search
-                            </button>
-                        </div>
-                        
-                        <div class="search-suggestions">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-fire text-danger me-2" style="font-size: 1.1rem;"></i>
-                                <h6 class="mb-0 fw-bold" style="color: #2c3e50;">Popular searches</h6>
-                            </div>
-                            <div class="row g-3 mb-4">
-                                <div class="col-md-6">
-                                    <div class="suggestion-card p-3 rounded-3" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); border: 1px solid #e9ecef; transition: all 0.3s ease; cursor: pointer;" onclick="searchFor('Online Banking')">
-                                        <div class="d-flex align-items-center">
-                                            <div class="me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, #28a745, #20c997); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                                <i class="fas fa-laptop text-white"></i>
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-1 fw-bold" style="color: #2c3e50;">Online Banking</h6>
-                                                <small class="text-muted">Access your accounts</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="suggestion-card p-3 rounded-3" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); border: 1px solid #e9ecef; transition: all 0.3s ease; cursor: pointer;" onclick="searchFor('Credit Cards')">
-                                        <div class="d-flex align-items-center">
-                                            <div class="me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, #ffc107, #fd7e14); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                                <i class="fas fa-credit-card text-white"></i>
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-1 fw-bold" style="color: #2c3e50;">Credit Cards</h6>
-                                                <small class="text-muted">Explore card options</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="suggestion-card p-3 rounded-3" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); border: 1px solid #e9ecef; transition: all 0.3s ease; cursor: pointer;" onclick="searchFor('Mortgages')">
-                                        <div class="d-flex align-items-center">
-                                            <div class="me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, #6f42c1, #e83e8c); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                                <i class="fas fa-home text-white"></i>
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-1 fw-bold" style="color: #2c3e50;">Mortgages</h6>
-                                                <small class="text-muted">Home financing solutions</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="suggestion-card p-3 rounded-3" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); border: 1px solid #e9ecef; transition: all 0.3s ease; cursor: pointer;" onclick="searchFor('Investment')">
-                                        <div class="d-flex align-items-center">
-                                            <div class="me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, #17a2b8, #20c997); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                                <i class="fas fa-chart-line text-white"></i>
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-1 fw-bold" style="color: #2c3e50;">Investment</h6>
-                                                <small class="text-muted">Grow your wealth</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control search-input" placeholder="Search banking services...">
+                        <button class="btn btn-primary search-btn">Search</button>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <div class="search-card text-center p-3">
+                                <i class="fas fa-laptop text-primary mb-2"></i>
+                                <small>Online Banking</small>
                             </div>
                         </div>
-                        
-                        <div class="search-results" id="searchResults" style="display: none;">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-search text-primary me-2"></i>
-                                <h6 class="mb-0 fw-bold" style="color: #2c3e50;">Search Results</h6>
+                        <div class="col-6">
+                            <div class="search-card text-center p-3">
+                                <i class="fas fa-credit-card text-warning mb-2"></i>
+                                <small>Credit Cards</small>
                             </div>
-                            <div id="resultsContainer"></div>
                         </div>
                     </div>
                 </div>
@@ -254,242 +148,40 @@
         </div>
     </div>
 
-
-
-    <!-- Hero Section -->
-    <section class="hero-section position-relative overflow-hidden" id="heroSection" style="height: 70vh; background-size: cover; background-position: center; transition: background-image 1s ease-in-out;">
-        <!-- Background Bg -->
-        <div class="hero-overlay position-absolute w-100 h-100" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)); z-index: 1;"></div>
-        
-        <div class="container h-100 d-flex align-items-center position-relative" style="z-index: 2;">
-            <div class="row w-100">
-                <div class="col-lg-6">
-                    <div class="hero-content text-white" data-aos="fade-up" data-aos-duration="1000">
-                        <div style="padding-left: 20px; margin-bottom: 30px;">
-                            <h1 class="display-4 fw-bold mb-4" style="font-size: 3.5rem;">Welcome to Standard Chartered</h1>
-                            <p class="lead mb-4" style="font-size: 1.2rem;">Find out who we are and where we operate.</p>
-                            <button class="btn btn-primary btn-lg px-4 py-3 rounded-pill hover-lift" style="background: #007bff; border: none; transition: all 0.3s ease;">
-                                Know Us <i class="fas fa-arrow-right ms-2"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                    <div class="hero-image-content text-center text-white" id="heroImageContent">
-                   
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="hero-animation position-absolute" style="right: 10%; top: 20%; width: 300px; height: 300px; opacity: 0.1; z-index: 2;">
-            <div class="floating-circle" style="width: 100%; height: 100%; border: 2px solid white; border-radius: 50%; animation: float 6s ease-in-out infinite;"></div>
-        </div>
-        
-        <!-- Background slideshow -->
-        <div class="hero-indicators position-absolute d-flex gap-2" style="bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 3;">
-            <div class="indicator active" data-slide="0" style="width: 10px; height: 10px; background: white; border-radius: 50%; cursor: pointer; transition: all 0.3s ease;"></div>
-            <div class="indicator" data-slide="1" style="width: 10px; height: 10px; background: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer; transition: all 0.3s ease;"></div>
-            <div class="indicator" data-slide="2" style="width: 10px; height: 10px; background: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer; transition: all 0.3s ease;"></div>
-        </div>
-    </section>
-
-    <!-- Wealth & Retail Banking -->
-    <section class="py-5 bg-light" data-aos="fade-up">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4" data-aos="fade-right">
-                    <div class="profile-card text-center mb-4">
-                        <div class="profile-image mb-4" style="width: 250px; height: 250px; border-radius: 20px; overflow: hidden; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                                 alt="Banking Executive" class="img-fluid w-100 h-100" style="object-fit: cover;">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8" data-aos="fade-left">
-                    <div class="content-area ps-lg-5">
-                        <h2 class="display-5 fw-bold mb-4" style="color: #2c3e50;">Wealth & Retail Banking</h2>
-                        <p class="lead text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8;">
-                            Wealth & Retail Banking serves the local and international banking needs of clients across the wealth continuum from affluent to ultra-high net worth individuals and their businesses.
-                        </p>
-                        <div class="feature-points">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-check-circle text-success me-3" style="font-size: 1.2rem;"></i>
-                                <span>Comprehensive wealth management solutions</span>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-check-circle text-success me-3" style="font-size: 1.2rem;"></i>
-                                <span>International banking expertise</span>
-                            </div>
-                            <div class="d-flex align-items-center mb-4">
-                                <i class="fas fa-check-circle text-success me-3" style="font-size: 1.2rem;"></i>
-                                <span>Personalized financial planning</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Business  -->
-    <section class="py-5" data-aos="fade-up">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8" data-aos="fade-right">
-                    <div class="content-area pe-lg-5">
-                        <h2 class="display-5 fw-bold mb-4" style="color: #2c3e50;">Professional Banking Solutions</h2>
-                        <p class="lead text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8;">
-                            Our team of experienced professionals provides tailored banking solutions to meet your unique financial needs. 
-                            From corporate banking to personal wealth management, we're here to support your financial journey.
-                        </p>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <div class="stat-card p-3 rounded" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
-                                    <h4 class="text-primary fw-bold">150+</h4>
-                                    <p class="mb-0 text-muted">Countries & Territories</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="stat-card p-3 rounded" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
-                                    <h4 class="text-primary fw-bold">85,000+</h4>
-                                    <p class="mb-0 text-muted">Employees Worldwide</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4" data-aos="fade-left">
-                    <div class="meeting-image" style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
-                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                             alt="Business Meeting" class="img-fluid w-100" style="height: 350px; object-fit: cover;">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fraud Awareness-->
-    <section class="py-5 bg-light" data-aos="fade-up">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4" data-aos="fade-right">
-                    <div class="fraud-image" style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
-                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                             alt="Mobile Security" class="img-fluid w-100" style="height: 300px; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-8" data-aos="fade-left">
-                    <div class="content-area ps-lg-5">
-                        <h2 class="display-5 fw-bold mb-4" style="color: #2c3e50;">Be fraud aware</h2>
-                        <p class="lead text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8;">
-                            Stay informed about the latest methods and find out how you can report suspicious activity to help us fight back against fraud.
-                        </p>
-                        <div class="alert alert-warning d-flex align-items-center mb-4" role="alert">
-                            <i class="fas fa-shield-alt me-3 text-warning" style="font-size: 1.5rem;"></i>
-                            <div>
-                                <strong>Security Tip:</strong> We will never ask for your full PIN, password, or passcode via phone or email.
-                            </div>
-                        </div>
-                        <button class="btn btn-outline-primary btn-lg px-4 py-3 rounded-pill hover-lift">
-                            Learn more about security <i class="fas fa-arrow-right ms-2"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Standard Chartered -->
-    <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);" data-aos="fade-up">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <h2 class="display-4 fw-bold mb-4" style="color: #2c3e50;">About Standard Chartered</h2>
-                    <p class="lead text-muted mb-5" style="font-size: 1.2rem; line-height: 1.8;">
-                        Discover our people, markets and business strategy.
-                    </p>
-                    <button class="btn btn-primary btn-lg px-5 py-3 rounded-pill hover-lift animate-pulse" 
-                            style="background: linear-gradient(135deg, #007bff, #0056b3); border: none; box-shadow: 0 10px 30px rgba(0,123,255,0.3);">
-                        Explore our business <i class="fas fa-arrow-right ms-2"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="py-5 text-white" style="background: linear-gradient(135deg, #1a237e, #3949ab);">
+    <footer class="footer-section text-white py-4">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="footer-brand mb-4">
-                        <div class="d-flex align-items-center">
-                            <div class="me-2" style="width: 40px; height: 40px; border-radius: 8px; position: relative; display: flex; align-items: center; justify-content: center;">
-                                <img src="sc.jpeg" 
-                                     alt="Standard Chartered Logo" 
-                                     style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;">
-                            </div>
-                            <div>
-                                <div style="font-weight: 700; color: white; font-size: 18px;">standard</div>
-                                <div style="font-weight: 400; color: white; font-size: 18px; margin-top: -5px;">chartered</div>
-                            </div>
+                <div class="col-md-4 mb-3">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="sc.jpeg" alt="SC Logo" class="me-2" style="height: 40px; width: auto;">
+
+                        <div>
+                            <div class="footer-brand">standard</div>
+                            <div class="footer-sub">chartered</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <h5 class="fw-bold mb-3">Legal & Compliance</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light text-decoration-none mb-2 d-block hover-link">Accessibility</a></li>
-                        <li><a href="#" class="text-light text-decoration-none mb-2 d-block hover-link">Cookie policy</a></li>
-                        <li><a href="#" class="text-light text-decoration-none mb-2 d-block hover-link">Terms of use</a></li>
-                        <li><a href="#" class="text-light text-decoration-none mb-2 d-block hover-link">Privacy policy</a></li>
-                        <li><a href="#" class="text-light text-decoration-none mb-2 d-block hover-link">Modern slavery statement</a></li>
-                        <li><a href="#" class="text-light text-decoration-none mb-2 d-block hover-link">Regulatory disclosures</a></li>
-                    </ul>
+                <div class="col-md-4 mb-3">
+                    <h6 class="mb-3">Quick Links</h6>
+                    <a href="#" class="footer-link d-block mb-2">Privacy Policy</a>
+                    <a href="#" class="footer-link d-block mb-2">Contact Us</a>
+                    <a href="#" class="footer-link d-block">Careers</a>
                 </div>
-                <div class="col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <h5 class="fw-bold mb-3">Support & Security</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light text-decoration-none mb-2 d-block hover-link">Online security</a></li>
-                        <li><a href="#" class="text-light text-decoration-none mb-2 d-block hover-link">Fighting financial crime</a></li>
-                        <li><a href="#" class="text-light text-decoration-none mb-2 d-block hover-link">Our suppliers</a></li>
-                        <li><a href="#" class="text-light text-decoration-none mb-2 d-block hover-link">FAQs</a></li>
-                        <li><a href="#" class="text-light text-decoration-none mb-2 d-block hover-link">Our locations</a></li>
-                        <li><a href="#" class="text-light text-decoration-none mb-2 d-block hover-link">Contact us</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <h5 class="fw-bold mb-3">Follow Us</h5>
-                    <div class="social-links d-flex gap-3 mb-4">
-                        <a href="#" class="text-white hover-social" style="font-size: 1.5rem; transition: all 0.3s ease;">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" class="text-white hover-social" style="font-size: 1.5rem; transition: all 0.3s ease;">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-white hover-social" style="font-size: 1.5rem; transition: all 0.3s ease;">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-white hover-social" style="font-size: 1.5rem; transition: all 0.3s ease;">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="text-white hover-social" style="font-size: 1.5rem; transition: all 0.3s ease;">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                <div class="col-md-4">
+                    <h6 class="mb-3">Follow Us</h6>
+                    <div class="social-links mb-3">
+                        <a href="#" class="social-link me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
                     </div>
-                    <div class="copyright">
-                        <p class="mb-0" style="font-size: 14px;">© Standard Chartered 2025.</p>
-                        <p class="mb-0" style="font-size: 14px;">All Rights Reserved.</p>
-                    </div>
+                    <small class="text-white-50">© 2025 Standard Chartered Bank</small>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
