@@ -116,14 +116,15 @@ window.addEventListener('load', () => {
 
 
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.sticky-top');
+    const mainNavbar = document.querySelector('.sticky-top');
+    const topNavbar = document.querySelector('.navbar-dark');
+    
     if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255,255,255,0.95)';
-        navbar.style.backdropFilter = 'blur(10px)';
-        navbar.style.transition = 'all 0.3s ease';
+        if (mainNavbar) mainNavbar.classList.add('scrolled');
+        if (topNavbar) topNavbar.classList.add('scrolled');
     } else {
-        navbar.style.background = 'white';
-        navbar.style.backdropFilter = 'none';
+        if (mainNavbar) mainNavbar.classList.remove('scrolled');
+        if (topNavbar) topNavbar.classList.remove('scrolled');
     }
 });
 

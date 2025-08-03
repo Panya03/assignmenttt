@@ -1,7 +1,7 @@
-// Banking form functionality
+
 let customerCounter = 4;
 
-// Handle form submission
+// form submission
 document.addEventListener('DOMContentLoaded', function() {
     const customerForm = document.getElementById('customerForm');
     if (customerForm) {
@@ -32,40 +32,28 @@ function addNewCustomer() {
     const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
     
     // Create new row
-    const newRow = `
-        <tr>
-            <td style="padding: 15px; vertical-align: middle;">
-                <div class="d-flex align-items-center">
-                    <div class="avatar me-3" style="background: linear-gradient(135deg, #17a2b8, #20c997);">
-                        ${initials}
-                    </div>
-                    <div>
-                        <div class="fw-semibold">${name}</div>
-                        <small class="text-muted">Customer ID: ${customerId}</small>
-                    </div>
-                </div>
-            </td>
-            <td style="padding: 15px; vertical-align: middle;">${email}</td>
-            <td style="padding: 15px; vertical-align: middle;">${contact}</td>
-            <td style="padding: 15px; vertical-align: middle;">
-                <span class="badge bg-info">${accountType}</span>
-            </td>
-            <td style="padding: 15px; vertical-align: middle;">
-                <div class="btn-group" role="group">
-                    <button class="btn btn-outline-primary btn-sm" onclick="editCustomer('${customerId}')">
-                        <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="btn btn-outline-danger btn-sm" onclick="deleteCustomer('${customerId}')">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </div>
-            </td>
-        </tr>
-    `;
+    // Get the template and clone it
+    const template = document.getElementById('customerrow');
+    const newRow = template.content.cloneNode(true);
+    
+    // Fill in the customer data
+    newRow.querySelector('.customer-initials').textContent = initials;
+    newRow.querySelector('.customer-name').textContent = name;
+    newRow.querySelector('.customer-id').textContent = customerId;
+    newRow.querySelector('.customer-email').textContent = email;
+    newRow.querySelector('.customer-contact').textContent = contact;
+    newRow.querySelector('.customer-account-type').textContent = accountType;
+    
+    // Add event listeners to buttons
+    const editBtn = newRow.querySelector('.edit-btn');
+    const deleteBtn = newRow.querySelector('.delete-btn');
+    
+    editBtn.addEventListener('click', () => editCustomer(customerId));
+    deleteBtn.addEventListener('click', () => deleteCustomer(customerId));
     
     // Add to table
-    const tableBody = document.getElementById('customerTableBody');
-    tableBody.insertAdjacentHTML('beforeend', newRow);
+    const tableBody = document.getElementById('customerbody');
+    tableBody.appendChild(newRow);
     
     // Clear form
     document.getElementById('customerForm').reset();
@@ -83,7 +71,7 @@ function editCustomer(customerId) {
 function deleteCustomer(customerId) {
     if (confirm('Are you sure you want to delete this customer?')) {
         // Find and remove the row
-        const rows = document.querySelectorAll('#customerTableBody tr');
+        const rows = document.querySelectorAll('#customerbody tr');
         rows.forEach(row => {
             const idElement = row.querySelector('small');
             if (idElement && idElement.textContent.includes(customerId)) {

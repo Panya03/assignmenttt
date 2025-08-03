@@ -7,72 +7,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            min-height: 100vh;
-        }
-        .navbar-brand {
-            font-weight: bold;
-        }
-        .form-control, .form-select {
-            border-radius: 10px;
-            border: 1px solid #dee2e6;
-            padding: 12px;
-            transition: all 0.3s ease;
-        }
-        .form-control:focus, .form-select:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #007bff, #0056b3);
-            border: none;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-        }
-        .table {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .table thead {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: white;
-        }
-        .avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        .badge {
-            padding: 8px 12px;
-            border-radius: 20px;
-        }
-        .card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .hover-lift {
-            transition: all 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -110,7 +44,7 @@
     <!-- Main Content -->
     <div class="container-fluid py-5">
         <div class="row">
-            <!-- Customer Form Section -->
+            <!-- Customer Form -->
             <div class="col-lg-4">
                 <div class="card hover-lift">
                     <div class="card-header bg-primary text-white">
@@ -150,12 +84,12 @@
                 </div>
             </div>
             
-            <!-- Customer Table Section -->
+            <!-- Customer Table -->
             <div class="col-lg-8">
                 <div class="card hover-lift">
                     <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                         <h5 class="mb-0">
-                            <i class="fas fa-users me-2"></i>Customer Database
+                            <i class="fas fa-users me-2"></i>Our Customers
                         </h5>
                         <div class="btn-group" role="group">
                             <button class="btn btn-outline-light btn-sm" onclick="exportData()">
@@ -178,21 +112,21 @@
                                         <th style="padding: 15px;">Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody id="customerTableBody">
+                                <tbody id="customerbody">
                                     <tr>
                                         <td style="padding: 15px; vertical-align: middle;">
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar me-3" style="background: linear-gradient(135deg, #28a745, #20c997);">
-                                                    SR
+                                                    SJ
                                                 </div>
                                                 <div>
-                                                    <div class="fw-semibold">Sandra Rogers</div>
+                                                    <div class="fw-semibold">John Doe</div>
                                                     <small class="text-muted">Customer ID: SC001</small>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td style="padding: 15px; vertical-align: middle;">Rogers@gmail.com</td>
-                                        <td style="padding: 15px; vertical-align: middle;">+1 999-988-8877</td>
+                                        <td style="padding: 15px; vertical-align: middle;">johndoe@gmail.com</td>
+                                        <td style="padding: 15px; vertical-align: middle;">+91 7383819090</td>
                                         <td style="padding: 15px; vertical-align: middle;">
                                             <span class="badge bg-success">Savings</span>
                                         </td>
@@ -211,16 +145,16 @@
                                         <td style="padding: 15px; vertical-align: middle;">
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar me-3" style="background: linear-gradient(135deg, #ffc107, #fd7e14);">
-                                                    SC
+                                                    Sa
                                                 </div>
                                                 <div>
-                                                    <div class="fw-semibold">Steve Casey</div>
+                                                    <div class="fw-semibold">abcd</div>
                                                     <small class="text-muted">Customer ID: SC002</small>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td style="padding: 15px; vertical-align: middle;">Casey@gmail.com</td>
-                                        <td style="padding: 15px; vertical-align: middle;">+1 889-988-8877</td>
+                                        <td style="padding: 15px; vertical-align: middle;">abcd@gmail.com</td>
+                                        <td style="padding: 15px; vertical-align: middle;">+91 7777777777</td>
                                         <td style="padding: 15px; vertical-align: middle;">
                                             <span class="badge bg-primary">Current</span>
                                         </td>
@@ -239,16 +173,16 @@
                                         <td style="padding: 15px; vertical-align: middle;">
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar me-3" style="background: linear-gradient(135deg, #6f42c1, #e83e8c);">
-                                                    MM
+                                                    AD
                                                 </div>
                                                 <div>
-                                                    <div class="fw-semibold">Michelle Michaels</div>
+                                                    <div class="fw-semibold">efghijk</div>
                                                     <small class="text-muted">Customer ID: SC003</small>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td style="padding: 15px; vertical-align: middle;">Michaels@gmail.com</td>
-                                        <td style="padding: 15px; vertical-align: middle;">+1 889-988-8899</td>
+                                        <td style="padding: 15px; vertical-align: middle;">efghijk@gmail.com</td>
+                                        <td style="padding: 15px; vertical-align: middle;">+918888888888</td>
                                         <td style="padding: 15px; vertical-align: middle;">
                                             <span class="badge bg-primary">Current</span>
                                         </td>
@@ -271,6 +205,38 @@
             </div>
         </div>
     </div>
+
+    <!-- Template for new customer row -->
+    <template id="customerrow">
+        <tr>
+            <td style="padding: 15px; vertical-align: middle;">
+                <div class="d-flex align-items-center">
+                    <div class="avatar me-3" style="background: linear-gradient(135deg, #17a2b8, #20c997);">
+                        <span class="customer-initials"></span>
+                    </div>
+                    <div>
+                        <div class="fw-semibold customer-name"></div>
+                        <small class="text-muted">Customer ID: <span class="customer-id"></span></small>
+                    </div>
+                </div>
+            </td>
+            <td style="padding: 15px; vertical-align: middle;" class="customer-email"></td>
+            <td style="padding: 15px; vertical-align: middle;" class="customer-contact"></td>
+            <td style="padding: 15px; vertical-align: middle;">
+                <span class="badge bg-info customer-account-type"></span>
+            </td>
+            <td style="padding: 15px; vertical-align: middle;">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-outline-primary btn-sm edit-btn">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-outline-danger btn-sm delete-btn">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </template>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
