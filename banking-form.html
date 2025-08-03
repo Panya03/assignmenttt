@@ -6,19 +6,18 @@
     <title>Standard Chartered - Private Banking</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href="banking.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+   
     <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <div class="me-3" style="width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                    <img src="sc.jpeg" alt="SC Logo" style="width: 30px; height: 30px; object-fit: contain;">
-                </div>
+                <img src="sc.jpeg" alt="SC Logo" class="me-2" style="height: 40px; width: auto;">
+
                 <div>
-                    <div style="font-weight: 700; color: white; font-size: 18px;">standard</div>
-                    <div style="font-weight: 400; color: white; font-size: 18px; margin-top: -5px;">chartered</div>
+                    <div class="brand-name">standard</div>
+                    <div class="brand-sub">chartered</div>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -26,72 +25,59 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            <i class="fas fa-home me-1"></i>Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            <i class="fas  me-1"></i>Private Banking
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-university me-1"></i>Private Banking</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container-fluid py-5">
+  
+    <div class="container-fluid py-4">
         <div class="row">
-            <!-- Customer Form -->
-            <div class="col-lg-4">
+       
+            <div class="col-lg-4 mb-4">
                 <div class="card hover-lift">
                     <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">
-                            <i class="fas fa-user-plus me-2"></i>Add New Customer
-                        </h5>
+                        <h5 class="mb-0"><i class="fas fa-user-plus me-2"></i>Add New Customer</h5>
                     </div>
-                    <div class="card-body p-4">
+                    <div class="card-body">
                         <form id="customerForm">
                             <div class="mb-3">
-                                <label for="customerName" class="form-label fw-semibold">Full Name</label>
+                                <label class="form-label fw-semibold">Full Name</label>
                                 <input type="text" class="form-control" id="customerName" placeholder="Enter customer name" required>
                             </div>
                             <div class="mb-3">
-                                <label for="customerEmail" class="form-label fw-semibold">Email Address</label>
+                                <label class="form-label fw-semibold">Email Address</label>
                                 <input type="email" class="form-control" id="customerEmail" placeholder="Enter email address" required>
                             </div>
                             <div class="mb-3">
-                                <label for="customerContact" class="form-label fw-semibold">Contact Number</label>
+                                <label class="form-label fw-semibold">Contact Number</label>
                                 <input type="tel" class="form-control" id="customerContact" placeholder="Enter contact number" required>
                             </div>
-                            <div class="mb-4">
-                                <label for="accountType" class="form-label fw-semibold">Account Type</label>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Account Type</label>
                                 <select class="form-select" id="accountType" required>
                                     <option value="">Select account type</option>
-                                    <option value="savings">Savings Account</option>
-                                    <option value="current">Current Account</option>
-                                    <option value="premium">Premium Account</option>
-                                    <option value="wealth">Wealth Management</option>
+                                    <option value="Savings">Savings Account</option>
+                                    <option value="Current">Current Account</option>
+                                    <option value="Premium">Premium Account</option>
+                                    <option value="Wealth">Wealth Management</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100 py-3">
+                            <button type="submit" class="btn btn-primary w-100 py-2">
                                 <i class="fas fa-plus me-2"></i>Add Customer
                             </button>
                         </form>
                     </div>
                 </div>
             </div>
-            
-            <!-- Customer Table -->
+      
             <div class="col-lg-8">
                 <div class="card hover-lift">
                     <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">
-                            <i class="fas fa-users me-2"></i>Our Customers
-                        </h5>
-                        <div class="btn-group" role="group">
+                        <h5 class="mb-0"><i class="fas fa-users me-2"></i>Our Customers</h5>
+                        <div class="btn-group">
                             <button class="btn btn-outline-light btn-sm" onclick="exportData()">
                                 <i class="fas fa-download me-1"></i>Export
                             </button>
@@ -103,98 +89,36 @@
                     <div class="card-body p-0">
                         <div class="table-responsive">
                             <table class="table table-hover mb-0">
-                                <thead>
+                                <thead class="table-light">
                                     <tr>
-                                        <th style="padding: 15px;">Name</th>
-                                        <th style="padding: 15px;">Email</th>
-                                        <th style="padding: 15px;">Contact</th>
-                                        <th style="padding: 15px;">Account Type</th>
-                                        <th style="padding: 15px;">Actions</th>
+                                        <th class="p-3">Customer</th>
+                                        <th class="p-3">Email</th>
+                                        <th class="p-3">Contact</th>
+                                        <th class="p-3">Account Type</th>
+                                        <th class="p-3">Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody id="customerbody">
+                                <tbody id="customerTable">
                                     <tr>
-                                        <td style="padding: 15px; vertical-align: middle;">
+                                        <td class="p-3">
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar me-3" style="background: linear-gradient(135deg, #28a745, #20c997);">
-                                                    SJ
-                                                </div>
+                                                <div class="avatar me-3" style="background: linear-gradient(135deg, #28a745, #20c997);">JD</div>
                                                 <div>
                                                     <div class="fw-semibold">John Doe</div>
-                                                    <small class="text-muted">Customer ID: SC001</small>
+                                                    <small class="text-muted">ID: SC001</small>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td style="padding: 15px; vertical-align: middle;">johndoe@gmail.com</td>
-                                        <td style="padding: 15px; vertical-align: middle;">+91 7383819090</td>
-                                        <td style="padding: 15px; vertical-align: middle;">
-                                            <span class="badge bg-success">Savings</span>
-                                        </td>
-                                        <td style="padding: 15px; vertical-align: middle;">
-                                            <div class="btn-group" role="group">
-                                                <button class="btn btn-outline-primary btn-sm" onclick="editCustomer('SC001')">
-                                                    <i class="fas fa-edit"></i>
-                                                </button>
-                                                <button class="btn btn-outline-danger btn-sm" onclick="deleteCustomer('SC001')">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 15px; vertical-align: middle;">
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar me-3" style="background: linear-gradient(135deg, #ffc107, #fd7e14);">
-                                                    Sa
-                                                </div>
-                                                <div>
-                                                    <div class="fw-semibold">abcd</div>
-                                                    <small class="text-muted">Customer ID: SC002</small>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td style="padding: 15px; vertical-align: middle;">abcd@gmail.com</td>
-                                        <td style="padding: 15px; vertical-align: middle;">+91 7777777777</td>
-                                        <td style="padding: 15px; vertical-align: middle;">
-                                            <span class="badge bg-primary">Current</span>
-                                        </td>
-                                        <td style="padding: 15px; vertical-align: middle;">
-                                            <div class="btn-group" role="group">
-                                                <button class="btn btn-outline-primary btn-sm" onclick="editCustomer('SC002')">
-                                                    <i class="fas fa-edit"></i>
-                                                </button>
-                                                <button class="btn btn-outline-danger btn-sm" onclick="deleteCustomer('SC002')">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 15px; vertical-align: middle;">
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar me-3" style="background: linear-gradient(135deg, #6f42c1, #e83e8c);">
-                                                    AD
-                                                </div>
-                                                <div>
-                                                    <div class="fw-semibold">efghijk</div>
-                                                    <small class="text-muted">Customer ID: SC003</small>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td style="padding: 15px; vertical-align: middle;">efghijk@gmail.com</td>
-                                        <td style="padding: 15px; vertical-align: middle;">+918888888888</td>
-                                        <td style="padding: 15px; vertical-align: middle;">
-                                            <span class="badge bg-primary">Current</span>
-                                        </td>
-                                        <td style="padding: 15px; vertical-align: middle;">
-                                            <div class="btn-group" role="group">
-                                                <button class="btn btn-outline-primary btn-sm" onclick="editCustomer('SC003')">
-                                                    <i class="fas fa-edit"></i>
-                                                </button>
-                                                <button class="btn btn-outline-danger btn-sm" onclick="deleteCustomer('SC003')">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </div>
+                                        <td class="p-3">johndoe@gmail.com</td>
+                                        <td class="p-3">+91 7383819090</td>
+                                        <td class="p-3"><span class="badge bg-success">Savings</span></td>
+                                        <td class="p-3">
+                                            <button class="btn btn-outline-primary btn-sm me-1" onclick="editCustomer('SC001')">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn btn-outline-danger btn-sm" onclick="deleteCustomer('SC001')">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -206,40 +130,7 @@
         </div>
     </div>
 
-    <!-- Template for new customer row -->
-    <template id="customerrow">
-        <tr>
-            <td style="padding: 15px; vertical-align: middle;">
-                <div class="d-flex align-items-center">
-                    <div class="avatar me-3" style="background: linear-gradient(135deg, #17a2b8, #20c997);">
-                        <span class="customer-initials"></span>
-                    </div>
-                    <div>
-                        <div class="fw-semibold customer-name"></div>
-                        <small class="text-muted">Customer ID: <span class="customer-id"></span></small>
-                    </div>
-                </div>
-            </td>
-            <td style="padding: 15px; vertical-align: middle;" class="customer-email"></td>
-            <td style="padding: 15px; vertical-align: middle;" class="customer-contact"></td>
-            <td style="padding: 15px; vertical-align: middle;">
-                <span class="badge bg-info customer-account-type"></span>
-            </td>
-            <td style="padding: 15px; vertical-align: middle;">
-                <div class="btn-group" role="group">
-                    <button class="btn btn-outline-primary btn-sm edit-btn">
-                        <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="btn btn-outline-danger btn-sm delete-btn">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </div>
-            </td>
-        </tr>
-    </template>
-
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="banking-form.js"></script>
 </body>
-</html> 
+</html>

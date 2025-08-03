@@ -1,164 +1,143 @@
-//animation
-AOS.init({
-    duration: 1000,
-    easing: 'ease-in-out',
-    once: true,
-    mirror: false
-});
-
-//  Background Slideshow
-const heroBackgrounds = [
-    {
-        image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-        title: 'Global Banking Excellence',
-        subtitle: 'Connecting markets worldwide with innovative financial solutions',
-        icon: 'fas fa-globe-americas'
-    },
-    {
-        image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-        title: 'Digital Innovation',
-        subtitle: 'Leading the future of banking with cutting-edge technology',
-        icon: 'fas fa-rocket'
-    },
-    {
-        image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-        title: 'Sustainable Finance',
-        subtitle: 'Building a better tomorrow through responsible banking',
-        icon: 'fas fa-leaf'
-    }
-];
-
-let currentSlide = 0;
-const heroSection = document.getElementById('heroSection');
-const heroImageContent = document.getElementById('heroImageContent');
-const indicators = document.querySelectorAll('.indicator');
-
-// Function to update my background 
-function updateHeroSlide(index) {
-    const slide = heroBackgrounds[index];
+document.addEventListener('DOMContentLoaded', function() {
     
-    heroSection.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('${slide.image}')`;
+    // Hero Background Slideshow
+    const hero = document.getElementById('hero');
+    const indicators = document.querySelectorAll('.indicator');
+    const circle = document.querySelector('.floating-circle');
     
+    const slides = [
+        {
+            bg: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop')",
+            icon: 'fas fa-university',
+            text: '160+ Years'
+        },
+        {
+            bg: "url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1920&h=1080&fit=crop')",
+            icon: 'fas fa-users',
+            text: '85K+ Staff'
+        },
+        {
+            bg: "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&h=1080&fit=crop')",
+            icon: 'fas fa-globe',
+            text: '60+ Markets'
+        }
+    ];
     
-    heroImageContent.style.opacity = '0';
-    heroImageContent.style.transform = 'translateY(20px)';
+    let currentSlide = 0;
     
-    setTimeout(() => {
-        heroImageContent.innerHTML = `
-            <div class="hero-slide-content" data-aos="fade-up" data-aos-duration="800">
-                <div class="mb-4">
-                    <i class="${slide.icon}" style="font-size: 4rem; color: #00c851; text-shadow: 0 0 20px rgba(0,200,81,0.5);"></i>
-                </div>
-                <h3 class="fw-bold mb-3" style="font-size: 2rem;">${slide.title}</h3>
-                <p class="lead" style="font-size: 1.1rem; opacity: 0.9;">${slide.subtitle}</p>
-            </div>
-        `;
+    function changeSlide(index) {
+        const slide = slides[index];
         
-        heroImageContent.style.opacity = '1';
-        heroImageContent.style.transform = 'translateY(0)';
-        heroImageContent.style.transition = 'all 0.8s ease-out';
-    }, 300);
+        // Update background
+        hero.style.backgroundImage = slide.bg;
+        
+        // Update circle content
+        const icon = circle.querySelector('i');
+        const text = circle.querySelector('.circle-text');
+        
+        icon.className = slide.icon;
+        text.textContent = slide.text;
+        
+        // Update indicators
+        indicators.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        
+        currentSlide = index;
+    }
     
- 
-    indicators.forEach((indicator, i) => {
-        if (i === index) {
-            indicator.style.background = 'white';
-            indicator.style.transform = 'scale(1.2)';
-            indicator.classList.add('active');
-        } else {
-            indicator.style.background = 'rgba(255,255,255,0.5)';
-            indicator.style.transform = 'scale(1)';
-            indicator.classList.remove('active');
+    // Auto slideshow
+    let autoSlide = setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        changeSlide(currentSlide);
+    }, 4000);
+    
+    // Manual indicator clicks
+    indicators.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            clearInterval(autoSlide);
+            changeSlide(index);
+            
+            // Restart auto after 3 seconds
+            setTimeout(() => {
+                autoSlide = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    changeSlide(currentSlide);
+                }, 4000);
+            }, 3000);
+        });
+    });
+    
+    // Initialize first slide
+    changeSlide(0);
+    
+    // Search functionality
+    const searchInput = document.querySelector('.search-input');
+    const searchBtn = document.querySelector('.search-btn');
+    const searchCards = document.querySelectorAll('.search-card');
+    
+    function performSearch(term) {
+        console.log('Searching for:', term);
+        const modal = bootstrap.Modal.getInstance(document.getElementById('searchModal'));
+        if (modal) modal.hide();
+        alert(`Searching for: "${term}"`);
+    }
+    
+    searchBtn?.addEventListener('click', () => {
+        if (searchInput.value.trim()) {
+            performSearch(searchInput.value.trim());
         }
     });
     
-    currentSlide = index;
-}
-
-
-updateHeroSlide(0);
-
-//auto slides
-setInterval(() => {
-    currentSlide = (currentSlide + 1) % heroBackgrounds.length;
-    updateHeroSlide(currentSlide);
-}, 7000);
-
-
-indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
-        updateHeroSlide(index);
+    searchInput?.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && searchInput.value.trim()) {
+            performSearch(searchInput.value.trim());
+        }
     });
-});
-
-
-
-
-// Smooth scrolling removed - now uses default browser behavior
-
-
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-        heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
-
-
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.5s ease-in-out';
-    setTimeout(() => {
-        document.body.style.opacity = '1';
-    }, 100);
-});
-
-
-window.addEventListener('scroll', () => {
-    const mainNavbar = document.querySelector('.sticky-top');
-    const topNavbar = document.querySelector('.navbar-dark');
     
-    if (window.scrollY > 100) {
-        if (mainNavbar) mainNavbar.classList.add('scrolled');
-        if (topNavbar) topNavbar.classList.add('scrolled');
-    } else {
-        if (mainNavbar) mainNavbar.classList.remove('scrolled');
-        if (topNavbar) topNavbar.classList.remove('scrolled');
-    }
-});
-
-const animateCounters = () => {
-    const counters = document.querySelectorAll('.stat-card h4');
-    counters.forEach(counter => {
-        const target = parseInt(counter.textContent.replace(/\D/g, ''));
-        let current = 0;
-        const increment = target / 100;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
+    searchCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const term = card.querySelector('small').textContent;
+            searchInput.value = term;
+            performSearch(term);
+        });
+    });
+    
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
             }
-            counter.textContent = Math.floor(current).toLocaleString() + '+';
-        }, 20);
-    });
-};
-
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounters();
-            observer.disconnect();
+        });
+    }, { threshold: 0.3 });
+    
+    const bankingImg = document.querySelector('.banking-img');
+    if (bankingImg) {
+        observer.observe(bankingImg);
+    }
+    
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar.sticky-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            navbar.style.background = 'rgba(255,255,255,0.95)';
+            navbar.style.backdropFilter = 'blur(10px)';
+        } else {
+            navbar.style.background = 'white';
+            navbar.style.backdropFilter = 'none';
         }
     });
+    
+    // Button hover animations
+    document.querySelectorAll('.hover-btn').forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.02)';
+        });
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    console.log('🚀 Standard Chartered website loaded successfully!');
 });
-
-const statsSection = document.querySelector('.stat-card');
-if (statsSection) {
-    observer.observe(statsSection);
-}
-
-
- 
