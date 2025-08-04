@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Chartered Bank</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-dark top-nav py-1">
+        <div class="container-fluid justify-content-end">
+            <div class="nav-links d-flex align-items-center">
+                <a href="#" class="nav-link text-white me-3 hover-link">
+                    <i class="fas fa-laptop me-1"></i>Online Banking
+                </a>
+                <a href="banking-form.html" class="nav-link text-white me-3 hover-link">
+                    <i class="fas fa-university me-1"></i>Private Banking
+                </a>
+                <a href="#" class="nav-link text-white hover-link">
+                    <i class="fas fa-phone me-1"></i>Contact Us
+                </a>
+            </div>
+        </div>
+    </nav>
+
+   
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="sc.jpeg" alt="SC Logo" class="me-2" style="height: 40px; width: auto;">
+
+                <div>
+                    <div class="brand-name">standard</div>
+                    <div class="brand-sub">chartered</div>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="banking-form.html">
+                        <i class="fas me-1"></i>Customer Management
+                    </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Investors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="#" data-bs-toggle="modal" data-bs-target="#searchModal">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   
+    <section id="hero" class="hero-section d-flex align-items-center">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="hero-title text-white mb-3">Welcome to Standard Chartered</h1>
+                    <p class="hero-subtitle text-white mb-4">Discover innovative banking solutions for your financial journey.</p>
+                    <button class="btn btn-primary btn-lg hover-btn">
+                        Explore Services <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="floating-element">
+            <div class="floating-circle">
+                <i class="fas fa-university"></i>
+                <div class="circle-text">160+ Years</div>
+            </div>
+        </div>
+        
+        <div class="hero-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+    </section>
+
+  
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
+                         alt="Banking" class="img-fluid rounded-3 shadow banking-img">
+                </div>
+                <div class="col-lg-8">
+                    <h2 class="section-title mb-3">Wealth & Retail Banking</h2>
+                    <p class="text-muted mb-4">Comprehensive banking solutions serving clients across the wealth continuum with international expertise.</p>
+                    <div class="features">
+                        <div class="feature-item mb-2">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Global wealth management solutions
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            International banking expertise
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content search-modal">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Search Services</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control search-input" placeholder="Search banking services...">
+                        <button class="btn btn-primary search-btn">Search</button>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <div class="search-card text-center p-3">
+                                <i class="fas fa-laptop text-primary mb-2"></i>
+                                <small>Online Banking</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="search-card text-center p-3">
+                                <i class="fas fa-credit-card text-warning mb-2"></i>
+                                <small>Credit Cards</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <footer class="footer-section text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="sc.jpeg" alt="SC Logo" class="me-2" style="height: 40px; width: auto;">
+
+                        <div>
+                            <div class="footer-brand">standard</div>
+                            <div class="footer-sub">chartered</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6 class="mb-3">Quick Links</h6>
+                    <a href="#" class="footer-link d-block mb-2">Privacy Policy</a>
+                    <a href="#" class="footer-link d-block mb-2">Contact Us</a>
+                    <a href="#" class="footer-link d-block">Careers</a>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="mb-3">Follow Us</h6>
+                    <div class="social-links mb-3">
+                        <a href="#" class="social-link me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <small class="text-white-50">© 2025 Standard Chartered Bank</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

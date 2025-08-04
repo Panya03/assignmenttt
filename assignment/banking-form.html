@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="banking.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-users"></i> Customer Management</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Add Customer Form -->
+            <div class="form-card">
+                <h2><i class="fas fa-user-plus"></i> Add Customer</h2>
+                <form id="customerForm">
+                    <div class="field">
+                        <label>Name</label>
+                        <input type="text" id="name" placeholder="Enter name">
+                        <span id="nameError" class="error"></span>
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" id="email" placeholder="Enter email">
+                        <span id="emailError" class="error"></span>
+                    </div>
+                    <div class="field">
+                        <label>Phone</label>
+                        <input type="tel" id="phone" placeholder="Enter phone">
+                        <span id="phoneError" class="error"></span>
+                    </div>
+                    <div class="field">
+                        <label>Account Type</label>
+                        <select id="type">
+                            <option value="">Select type</option>
+                            <option value="Savings">Savings</option>
+                            <option value="Current">Current</option>
+                            <option value="Premium">Premium</option>
+                        </select>
+                        <span id="typeError" class="error"></span>
+                    </div>
+                    <button type="submit">Add Customer</button>
+                </form>
+            </div>
+
+          
+            <div class="table-card">
+                <h2><i class="fas fa-list"></i> Customers</h2>
+                <table>
+                    <thead>
+                        <tr><th>Name</th><th>Email</th><th>Phone</th><th>Type</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="customerTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div id="messages"></div>
+    <script src="banking-form.js"></script>
+</body>
+</html>
